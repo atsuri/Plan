@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(229, 194, 199);
+    font-family: Courier;
+}
+ 
+#input {
+    border: 5px solid;
+    border-radius: 8px;
+    border-color: rgb(34, 138, 136);
+}
+
+p {
+    margin-left: 10%;
+}

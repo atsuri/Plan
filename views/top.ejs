@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <title>Plan</title>
+  </head>
+  <body>
+    <h1>
+      予定表
+    </h1>
+    <form action="http://localhost:8081/submit" method="post">
+      日付: <input type="date" name="date">
+      時間: <input type="time" name="time">
+      金額: <input type="number" name="number"> 円
+      概要: <input type="text" name="message" size=50>
+      <input type="submit" value="追加">
+    </form>
+    <br>
+    <div id="input">
+      <% for (let i = 0; i < messages.length; i++) { %>
+        <div>
+          <form action="http://localhost:8081/submit/<%= i %>" method="post">
+              <input type="hidden" value="<%= i %>" name="index" />
+              <% let message = messages[i];%>
+              <p>
+                <%= i %>：<%= message %>
+                <button type="delete">削除</button>
+              </p>
+          </form>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
